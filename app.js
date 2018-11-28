@@ -60,7 +60,9 @@ var UIController = (function () {
         inputType: '.add__type',
         inputDescription: '.add__description',
         inputValue: '.add__value',
-        inputButton: '.add__btn'
+        inputButton: '.add__btn',
+        incomeContainer: '.income__list',
+        expensesContainer: '.expenses__list'
     };
 
     return {
@@ -71,6 +73,45 @@ var UIController = (function () {
                 description: document.querySelector(DOMStrings.inputDescription).value,
                 value: document.querySelector(DOMStrings.inputValue).value
             };
+        },
+
+        addListItem: function (object, type) {
+            var html, newHtml, element;
+
+            if (type === 'inc'){
+                element = DOMStrings.incomeContainer;
+
+               html = '<div class="item clearfix" id="income-%id%">\n' +
+                '                            <div class="item__description">%description%</div>\n' +
+                '                            <div class="right clearfix">\n' +
+                '                                <div class="item__value">%value%</div>\n' +
+                '                                <div class="item__delete">\n' +
+                '                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>\n' +
+                '                                </div>\n' +
+                '                            </div>\n' +
+                '                        </div>';
+            } else if (type === 'exp'){
+                element = DOMStrings.expensesContainer;
+
+                html = '<div class="item clearfix" id="expense-%id%">\n' +
+                    '                            <div class="item__description">%description%</div>\n' +
+                    '                            <div class="right clearfix">\n' +
+                    '                                <div class="item__value">%value%</div>\n' +
+                    '                                <div class="item__percentage">21%</div>\n' +
+                    '                                <div class="item__delete">\n' +
+                    '                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>\n' +
+                    '                                </div>\n' +
+                    '                            </div>\n' +
+                    '                        </div>';
+            }
+
+            newHtml = html.replace('%id%', object.id).replace('%description%', object.description).replace('%value%', object.value);
+
+                document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
+        },
+
+        clearFields: function () {
+
         },
 
         getDOMStrings: function () {
@@ -103,6 +144,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         input = UICtrl.getInput();
         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+        UICtrl.addListItem(input, input.type);
     };
 
     return {
