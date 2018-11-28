@@ -1,6 +1,28 @@
 // Budget Controller
 var budgetController = (function () {
 
+    var Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: [],
+            inc: []
+        }
+    };
 
 })();
 
@@ -45,7 +67,6 @@ var controller = (function (budgetCtrl, UICtrl) {
         document.addEventListener('keypress', function (event) {
 
             if (event.keyCode === 13 || event.which === 13) {
-
                 ctrlAddItem();
             }
         });
