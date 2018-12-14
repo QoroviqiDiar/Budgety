@@ -46,7 +46,6 @@ var budgetController = (function () {
                 ID = 0;
             }
 
-
             if (type === 'exp') {
                 newItem = new Expense(ID, desc, val);
             } else if (type === 'inc') {
@@ -98,7 +97,8 @@ var UIController = (function () {
         budgetValue: '.budget__value',
         incomeBudget: '.budget__income--value',
         expenseBudget: '.budget__expenses--value',
-        percentage: '.budget__expenses--percentage'
+        percentage: '.budget__expenses--percentage',
+        container: '.container'
     };
 
     return {
@@ -141,7 +141,10 @@ var UIController = (function () {
                     '                        </div>';
             }
 
-            newHtml = html.replace('%id%', object.id).replace('%description%', object.description).replace('%value%', object.value);
+            newHtml = html.replace('%id%', object.id);
+            newHtml = newHtml.replace('%description%', object.description);
+            newHtml = newHtml.replace('%value%', object.value);
+
 
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
@@ -191,6 +194,8 @@ var controller = (function (budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
+
+        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
     };
 
     var updateBudget = function () {
@@ -210,12 +215,20 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
             newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-            UICtrl.addListItem(input, input.type);
+            UICtrl.addListItem(newItem, input.type);
             UICtrl.clearFields();
             updateBudget();
         }
     };
 
+    var ctrlDeleteItem = function (event) {
+      var itemID;
+      itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+
+      if (itemID){
+        console.log(itemID);
+      }
+    };
 
     return {
         init: function () {
