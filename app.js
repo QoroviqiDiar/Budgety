@@ -53,6 +53,8 @@ var budgetController = (function () {
             }
 
             data.allItems[type].push(newItem);
+
+            return newItem;
         },
 
         calculateBudget: function () {
@@ -215,6 +217,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
             newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+
             UICtrl.addListItem(newItem, input.type);
             UICtrl.clearFields();
             updateBudget();
