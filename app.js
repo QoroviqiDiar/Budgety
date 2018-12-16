@@ -119,7 +119,7 @@ var UIController = (function () {
             if (type === 'inc') {
                 element = DOMStrings.incomeContainer;
 
-                html = '<div class="item clearfix" id="income-%id%">\n' +
+                html = '<div class="item clearfix" id="inc-%id%">\n' +
                     '                            <div class="item__description">%description%</div>\n' +
                     '                            <div class="right clearfix">\n' +
                     '                                <div class="item__value">%value%</div>\n' +
@@ -131,7 +131,7 @@ var UIController = (function () {
             } else if (type === 'exp') {
                 element = DOMStrings.expensesContainer;
 
-                html = '<div class="item clearfix" id="expense-%id%">\n' +
+                html = '<div class="item clearfix" id="exp-%id%">\n' +
                     '                            <div class="item__description">%description%</div>\n' +
                     '                            <div class="right clearfix">\n' +
                     '                                <div class="item__value">%value%</div>\n' +
@@ -225,11 +225,13 @@ var controller = (function (budgetCtrl, UICtrl) {
     };
 
     var ctrlDeleteItem = function (event) {
-      var itemID;
+      var itemID, splitID, type, ID;
       itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
       if (itemID){
-        console.log(itemID);
+        splitID = itemID.split('-');
+        type = splitID[0];
+        id = splitID[1];
       }
     };
 
