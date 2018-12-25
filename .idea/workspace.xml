@@ -47,8 +47,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="259" column="31" lean-forward="true" selection-start-line="259" selection-start-column="31" selection-end-line="259" selection-end-column="31" />
+            <state relative-caret-position="585">
+              <caret line="272" column="49" lean-forward="false" selection-start-line="272" selection-start-column="49" selection-end-line="272" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -74,6 +84,7 @@
       <find>format</find>
       <find>displa</find>
       <find>displayBudget</find>
+      <find>red-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,7 +128,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///var/www/Learning/JS/Budgety/index.html" />
+    <property name="SearchEverywhereHistoryKey" value=".css&#9;FILE&#9;file:///var/www/Learning/JS/Budgety/style.css&#10;index&#9;FILE&#9;file:///var/www/Learning/JS/Budgety/index.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
@@ -149,12 +160,12 @@
       <workItem from="1543058452134" duration="12807000" />
       <workItem from="1544169921813" duration="4250000" />
       <workItem from="1544774762875" duration="7803000" />
-      <workItem from="1544911144945" duration="11176000" />
+      <workItem from="1544911144945" duration="11947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36036000" />
+    <option name="totallyTimeSpent" value="36807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1682" height="999" extended-state="6" />
@@ -207,10 +218,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="259" column="31" lean-forward="true" selection-start-line="259" selection-start-column="31" selection-end-line="259" selection-end-column="31" />
+        <state relative-caret-position="585">
+          <caret line="272" column="49" lean-forward="false" selection-start-line="272" selection-start-column="49" selection-end-line="272" selection-end-column="49" />
           <folding />
         </state>
       </provider>
